@@ -1,50 +1,15 @@
-# React + TypeScript + Vite
+# MPT Example
+A boilerplate example of Modular Pink Trombone: polyphonic browser-based voice synthesis based on the original [Pink Trombone](https://dood.al/pinktrombone/) made by Neil Thapen (MIT License). A copy of the original code and the license are included in this repo, as per the license specifications.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Setup
+```git clone``` this repo
+```git submodule init```, ```git submodule update```
+```npm install```
+```npm run dev``` to run development server, or:
+```npm run build``` to build production files
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Usage
+- Enable audio using the button at the top
+- Choose your number of voices. Adding too many will causes audio processing gaps! Max # depends on CPU specs.
+- Adjust the frequency and intensity (volume) of voices. Voices are silent by default until you increase the intensity.
+- Click around a vocal tract UI to "speak" with the corresponding voice.
